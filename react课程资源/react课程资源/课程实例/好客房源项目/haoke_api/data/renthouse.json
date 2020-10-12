@@ -1,0 +1,42 @@
+{
+    "data": [
+        {   
+            "house_id":5,
+            "url": "http://127.0.0.1:7890/img/pic05.jpg",   
+            "house_name":"枣园小区4居室-02卧",
+            "house_info":"11.4m | 2/6层",
+            "price":2160,
+            "tags":"集体供暖,离地铁近",
+            "city":"北京" 
+        },
+        {
+            "house_id":6,
+            "url": "http://127.0.0.1:7890/img/pic06.jpg",   
+            "house_name":"枣园小区4居室-02卧",
+            "house_info":"11.4m | 2/6层",
+            "price":2160,
+            "tags":"集体供暖,离地铁近",
+            "city":"北京"            
+        },
+        {   
+            "house_id":7,
+            "url": "http://127.0.0.1:7890/img/pic01.jpg",   
+            "house_name":"西丽小区3居室-03卧",
+            "house_info":"11.4m | 2/6层",
+            "price":2160,
+            "tags":"环境优美,离地铁近",
+            "city":"深圳" 
+        },
+        {
+            "house_id":8,
+            "url": "http://127.0.0.1:7890/img/pic02.jpg",   
+            "house_name":"南山小区4居室-03卧",
+            "house_info":"11.4m | 2/6层",
+            "price":2160,
+            "tags":"购物方便,离地铁近",
+            "city":"深圳"             
+        }
+    ],
+    "code":200,
+    "msg":"首页租房数据"
+}

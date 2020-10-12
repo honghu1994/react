@@ -1,0 +1,38 @@
+{
+    "data": [
+        {   
+            "house_id":1,
+            "url": "http://127.0.0.1:7890/img/pic07.jpg",   
+            "house_name":"鹏展汇",
+            "sites_info":"宝安区 | 沙井",
+            "price":45000,
+            "tags":"低单价,新盘首开"
+        },
+        {   
+            "house_id":2,
+            "url": "http://127.0.0.1:7890/img/pic08.jpg",   
+            "house_name":"建业擎天",
+            "sites_info":"龙岗区 | 横岗",
+            "price":62000,
+            "tags":"购物方便,美食云集"
+        },
+        {   
+            "house_id":1,
+            "url": "http://127.0.0.1:7890/img/pic077.jpg",   
+            "house_name":"世纪和城",
+            "sites_info":"宝安区 | 沙井",
+            "price":45000,
+            "tags":"低单价,新盘首开"
+        },
+        {   
+            "house_id":2,
+            "url": "http://127.0.0.1:7890/img/pic088.jpg",   
+            "house_name":"天创云轩",
+            "sites_info":"龙岗区 | 坂田",
+            "price":62000,
+            "tags":"购物方便,美食云集"
+        }
+    ],
+    "code":200,
+    "msg":"深圳新房数据"
+}

@@ -1,0 +1,38 @@
+{
+    "data": [
+        {   
+            "house_id":1,
+            "url": "http://127.0.0.1:7890/img/pic09.jpg",   
+            "house_name":"金阳湖畔",
+            "sites_info":"北京 | 燕郊",
+            "price":55000,
+            "tags":"低单价,环境优美"
+        },
+        {   
+            "house_id":2,
+            "url": "http://127.0.0.1:7890/img/pic10.jpg",   
+            "house_name":"国彩立方",
+            "sites_info":"北京 | 昌平",
+            "price":62000,
+            "tags":"购物方便,地铁口旁"
+        },
+        {   
+            "house_id":1,
+            "url": "http://127.0.0.1:7890/img/pic099.jpg",   
+            "house_name":"江景天城",
+            "sites_info":"北京 | 顺义",
+            "price":45000,
+            "tags":"低单价,环境优美"
+        },
+        {   
+            "house_id":2,
+            "url": "http://127.0.0.1:7890/img/pic1010.jpg",   
+            "house_name":"小榭听香",
+            "sites_info":"北京 | 密云",
+            "price":62000,
+            "tags":"购物方便,地铁口旁"
+        }    
+    ],
+    "code":200,
+    "msg":"北京新房数据"
+}

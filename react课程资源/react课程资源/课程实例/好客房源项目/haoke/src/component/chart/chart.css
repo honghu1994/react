@@ -1,0 +1,21 @@
+.chart_wrap{
+    margin-top:.5rem;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.chart_title{
+    text-align:center;
+    font-size:.8rem;
+    line-height:2rem;
+    font-weight:bold;
+    color:#666;
+}
+
+.chart_con{
+    width:96%;
+    height:11rem;
+    overflow: hidden;
+    margin:.5rem auto;
+    background-color: #fff;
+}

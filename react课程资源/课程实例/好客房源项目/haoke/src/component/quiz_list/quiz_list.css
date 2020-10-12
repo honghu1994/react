@@ -1,0 +1,60 @@
+.question_list{
+    padding:0 .7rem .5rem;
+    overflow: hidden;
+}
+
+.question_list li{
+    border-bottom:1px solid #ddd;
+    padding:.5rem 0;
+    position: relative;
+}
+.q_title{
+    font-size:14px;
+    line-height:1.2rem;
+    color:#333;
+    background:url('../../static/images/icons.png') left -13.3rem no-repeat;
+    background-size:11.5rem;
+}
+.q_title a{
+    display:block;
+    text-indent:1rem;
+    width:85%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color:#333;
+}
+.q_info{
+    font-size:14px;
+    line-height:1.2rem;
+    color:#999; 
+    text-indent:1rem;
+}
+.a_count{
+    position: absolute;
+    right:.3rem;
+    top:.7rem;
+    width:1.8rem;
+    border-radius:.9rem;
+    line-height:1.8rem;
+    font-size:1rem;
+    color:#666;
+    background-color: #f4f4f4;
+    text-align:center;
+}
+
+
+.quiz_list{
+    padding:0;
+}
+
+.quiz_list li{
+    background-color: #fff;
+    padding:.6rem .5rem;
+    margin:.5rem 0;
+    border-bottom:0;
+}
+
+.quiz_list .a_count{
+    top:.9rem;
+}

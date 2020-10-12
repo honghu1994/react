@@ -1,0 +1,38 @@
+{
+    "data": [
+        {   
+            "house_id":5,
+            "url": "http://127.0.0.1:7890/img/pic05.jpg",   
+            "house_name":"枣园小区4居室-02卧",
+            "house_info":"11.4m | 2/6层",
+            "price":2160,
+            "tags":"集体供暖,离地铁近"
+        },
+        {
+            "house_id":6,
+            "url": "http://127.0.0.1:7890/img/pic06.jpg",   
+            "house_name":"枣园小区4居室-02卧",
+            "house_info":"11.4m | 2/6层",
+            "price":2160,
+            "tags":"集体供暖,离地铁近"           
+        },
+        {   
+            "house_id":5,
+            "url": "http://127.0.0.1:7890/img/pic05.jpg",   
+            "house_name":"枣园小区4居室-02卧",
+            "house_info":"11.4m | 2/6层",
+            "price":2160,
+            "tags":"集体供暖,离地铁近"
+        },
+        {
+            "house_id":6,
+            "url": "http://127.0.0.1:7890/img/pic06.jpg",   
+            "house_name":"枣园小区4居室-02卧",
+            "house_info":"11.4m | 2/6层",
+            "price":2160,
+            "tags":"集体供暖,离地铁近"           
+        }
+    ],
+    "code":200,
+    "msg":"北京租房数据"
+}
