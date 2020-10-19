@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>todolist</title>
+	<style type="text/css">
+		.list_con{
+			width:600px;
+			margin:50px auto 0;
+		}
+		.inputtxt{
+			width:550px;
+			height:30px;
+			border:1px solid #ccc;
+			padding:0px;
+			text-indent:10px;			
+		}
+		.inputbtn{
+			width:40px;
+			height:32px;
+			padding:0px;
+			border:1px solid #ccc;
+		}
+		.list{
+			margin:0;
+			padding:0;
+			list-style:none;
+			margin-top:20px;
+		}
+		.list li{
+			height:40px;
+			line-height:40px;
+			border-bottom:1px solid #ccc;
+		}
+		.list li span{
+			float:left;
+		}
+		.list li a{
+			float:right;
+			text-decoration:none;
+			margin:0 10px;
+		}
+	</style>
+	<script src="js/react.development.js"></script>
+    <script src="js/react-dom.development.js"></script>
+    <script src="js/babel.min.js"></script>
+</head>
+<body>
+	<div id="root"></div>
+
+	<script type="text/babel">
+		class Todolist extends React.Component{
+			constructor(props){
+				super(props);
+				this.state = {
+					aTodolist:['学习html','学习css','学习javascript','学习react'],
+					sTodo:''
+				}
+			}
+			fnChange=(ev)=>{
+				this.setState({
+					sTodo:ev.target.value
+				})
+			}
+
+			// 定义增加计划的方法
+			fnAdd=()=>{
+				this.setState(function(state){
+					// 判断输入框是否为空
+					if(state.sTodo==''){
+						alert('请输入内容！');
+						return;
+					}
+
+					// 将原来的数组复制一份，再加上一个数组成员 sToto
+					let aNewArr = [...state.aTodolist,state.sTodo];
+					// 更新数组的数据，同时更新sTodo(清空sTodo的值)
+					return {aTodolist:aNewArr,sTodo:''}
+
+				})
+			}
+			// 定义删除计划的方法
+			fnDel=(index)=>{
+				this.setState(function(state){
+					let aNewArr = [...state.aTodolist];
+					aNewArr.splice(index,1);
+					return { aTodolist: aNewArr }
+
+				})
+			}
+			render(){
+				// 解构赋值，得到state里面的数组
+				let { aTodolist,sTodo } = this.state;
+
+				return (
+					<div className="list_con">
+						<h2>To do list</h2>
+						<input type="text" name="" id="txt1" value={ sTodo  } onChange={ this.fnChange } className="inputtxt" />
+						<input type="button" name="" value="增加" id="btn1" className="inputbtn" onClick={ this.fnAdd } />
+						
+						<ul id="list" className="list">
+							{
+								// 通过map方法遍历数组，将数组中的数据放入到jsx结构中
+								// map里的传递的函数最好写成箭头函数的形式，否则函数里面的this会指向混乱
+								aTodolist.map((item,index)=>{ 
+									return  <li key={ index }><span>{ item }</span><a href="javascript:;" className="del" onClick={()=>{ this.fnDel( index ) } }>删除</a></li>
+								})
+							}	
+
+						</ul>
+					</div>
+				)
+			}
+		}
+		ReactDOM.render(<Todolist />,document.getElementById('root'));
+
+		
+	</script>
+
+
+	
+
+</body>
+</html>

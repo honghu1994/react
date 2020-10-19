@@ -1,0 +1,56 @@
+.header_bar{
+  height:2rem;
+  background-color: #fff;
+  position: relative;
+}
+.header_bar .back{
+  position: absolute;
+  left:.8rem;
+  top:.48rem;
+  width:.675rem;
+  height:1.075rem;
+  background:url('../../static/images/arrow.png') left top no-repeat;
+  background-size:1.35rem;
+}
+.header_bar h3{
+  text-align:center;
+  line-height:2rem;
+  font-size:.8rem;
+}
+.list{
+  overflow: hidden;
+  
+}
+.list li{
+  display:flex;
+  background-color: #fff;
+  margin:.5rem 0;
+  padding:.5rem 0;
+}
+.list li a{
+  width:8.25rem;
+  height:4.625rem;
+  margin-left:1rem;
+  border-radius:.2rem;
+  overflow: hidden;
+}
+
+.list li a img{
+  width:100%;
+}
+
+.list li .detail_list{
+  margin-left:.7rem;
+  flex-grow:1;
+}
+
+.detail_list h4{
+  font-weight:bold;
+  line-height:.7rem;
+  font-size:.7rem;
+  margin-bottom:.25rem;
+}
+
+.detail_list .detail{
+  margin-bottom:.25rem;
+}

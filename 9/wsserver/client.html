@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .top{
+            width:500px;
+            height:30px;
+            margin:30px auto 10px;
+            display:flex;
+            align-items:center;
+        }
+        .input04{
+            width:200px;
+            height:30px;
+            padding:0px;
+            box-sizing:border-box;
+            border:1px solid #aaa;
+            text-indent:10px;
+            outline:none;
+        }
+        .chat_show{
+            width:500px;
+            height:300px;
+            display:block;
+            margin:0 auto;
+            outline:none;
+            box-sizing: border-box;
+            padding:15px;
+        }
+        .operation{
+            width:500px;
+            height:40px;
+            margin:10px auto 0;
+            display:flex;
+        }
+        .input01{
+            width:80px;
+            height:30px;
+            border:0px;
+            background-color:green;
+            color:#fff;
+            outline:none;
+        }
+        .input02{
+            width:330px;
+            height:40px;
+            padding:0px;
+            box-sizing:border-box;
+            border:1px solid #aaa;
+            text-indent:10px;
+            outline:none;
+            flex-grow:1;
+        }
+        .input03{
+            width:80px;
+            height:40px;
+            border:0px;
+            background-color:#f80;
+            color:#fff;
+            outline:none;
+        }
+    </style>
+</head>
+<body>
+    <div class="top">
+        <span>你的名字：</span>
+        <input type="text" class="input04">
+        <input type="button" value="连接" class="input01">
+    </div>
+    <textarea class="chat_show"></textarea>
+    <div class="operation">        
+        <input type="text" class="input02">
+        <input type="button" value="发送" class="input03">
+    </div>
+
+    <script type="text/javascript">
+        var oShow = document.querySelector('.chat_show');
+        var oBtn01 = document.querySelector('.input01');
+        var oText02 = document.querySelector('.input02');
+        var oText04 = document.querySelector('.input04');
+        var oBtn03= document.querySelector('.input03');
+        var ws;
+
+        oBtn01.onclick = function(){
+            ws = new WebSocket('ws://127.0.0.1:7891');            
+            ws.onmessage = (ev)=>{
+                if(oShow.value==''){
+                    oShow.value =ev.data;
+                }else{
+                    oShow.value =oShow.value +'\n\n' + ev.data;
+                }                
+            }
+        }
+
+        oBtn03.onclick = function(){
+            var sName = oText04.value;
+            var sVal = oText02.value;
+            oText02.value='';
+            if(sVal==''){
+                alert('请输入聊天内容！');
+                return;
+            }
+            ws.send(sName+"说： "+sVal);
+        }
+
+    </script>
+</body>
+</html>

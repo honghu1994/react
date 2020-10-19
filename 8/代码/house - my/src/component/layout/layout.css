@@ -1,0 +1,58 @@
+body{
+    background-color: #eeeff4;
+}
+
+footer{
+    background-color: #fff;
+    width:100%;
+    height:2.5rem;
+    position: fixed;
+    left:0;
+    bottom:0;
+}
+
+footer ul{
+    display:flex;
+}
+
+footer li{
+    width:33.3%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+footer li a{
+    width:1.1rem;
+    height:1.1rem;
+    margin-top: .325rem;
+    background:url('../../static/images/icons.png') left -2.5rem no-repeat;
+    background-size:11.5rem;
+}
+
+footer li:nth-child(2) a{
+    background-position:-2.5rem -2.5rem;
+}
+
+footer li:nth-child(3) a{
+    background-position:-5rem -2.5rem;
+}
+footer li h4{
+    font-size:.6rem;
+    color:#8f949b;
+    margin:.1rem 0 .2rem;
+}
+footer .active h4{
+    color:#00a15b;
+}
+
+footer li.active:nth-child(1) a{
+    background-position:0 -5rem;
+}
+
+footer li.active:nth-child(2) a{
+    background-position:-2.5rem -5rem;
+}
+footer li.active:nth-child(3) a{
+    background-position:-5rem -5rem;
+}

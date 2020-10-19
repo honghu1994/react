@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React Template</title>
+    <script src="js/react.development.js"></script>
+    <script src="js/react-dom.development.js"></script>
+    <script src="js/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+    class Increase extends React.Component{
+        // 通过consctructor构造函数来初始化组件的state属性
+        constructor(props){
+            super(props);
+            this.state = {
+                iNum:10,
+                sTr:'abc'
+            }
+        }
+
+        fnAdd=()=>{
+            // 不能直接改state里面的值
+            // this.state.iNum+=1;
+            // 修改state里面的值有特定的方法:setState,它是组件自身的方法
+            // setState可以传递一个对象
+            // this.setState({iNum:11})
+            // setState还可以传递一个函数，这个函数的第一个参数是state最新的值
+            // 第二个参数是props最新的值
+            // 这个函数最终需要返回一个对象
+            this.setState(function(state){
+                //console.log('setState');
+                return { iNum: state.iNum + 1 }
+            });
+
+            // 上面的写法改成下面箭头函数的形式：
+            //this.setState(state=>({iNum: state.iNum+ 1}));           
+
+            // console.log('down');
+        }
+        render(){
+            return (
+            <div>
+                <p>{ this.state.iNum }</p>
+                <input type="button" value="递增" onClick={ this.fnAdd } />
+            </div>
+            )
+          
+        }
+    }
+    ReactDOM.render(<Increase />,document.getElementById('root'));
+
+</script>
+</body>
+</html>

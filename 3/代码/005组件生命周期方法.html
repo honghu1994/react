@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React Template</title>
+    <script src="js/react.development.js"></script>
+    <script src="js/react-dom.development.js"></script>
+    <script src="js/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+    class Hello extends React.Component{
+        // 组件初始化时会自动执行的方法
+        constructor(props){
+            console.log('---constructor----');
+            super(props);
+            this.state = {
+                msg:'Hello world!',
+                iNum:10
+            }
+        }
+
+        fnAdd=()=>{
+            this.setState(state=>({iNum:state.iNum+1}))
+        }
+
+        // 组件在初始化并且在挂载之前会自动执行的方法，还在组件每次更新之前也会执行
+        render(){
+            console.log('---render---');
+            return (
+                <div>
+                    <h1>{this.state.msg}</h1>
+                    <p>{ this.state.iNum }</p>
+                    <input type="button" value="递增" onClick={ this.fnAdd } />
+                </div>
+            )
+        }
+
+        // 在组件更新之前会自动执行的方法
+        // 这个方法需要返回一个布尔值，如果返回true，那么组件更新相关的方法会执行
+        // 如果返回false，那么组件更新相关的方法就不执行
+        shouldComponentUpdate(){
+            console.log('---shouldComponentUpdate---');
+            return true;
+
+        }
+
+        // 组件在挂载到页面之后会自动执行的方法
+        componentDidMount(){
+            console.log('---componentDidMount---');
+        }
+
+        // 数据更新之后会自动执行的方法
+        componentDidUpdate(){
+            console.log('---componentDidUpdate---');
+        }
+
+
+        // 组件在销毁之前会自动执行的方法
+        componentWillUnmount(){
+            console.log('---componentWillUnmount---');
+        }
+
+    }
+
+    ReactDOM.render(<Hello />,document.getElementById('root'));
+
+    setTimeout(() => {
+        ReactDOM.render(<h1>Bye-Bye!</h1>,document.getElementById('root'));
+    }, 2000);
+
+   
+
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React Template</title>
+    <script src="js/react.development.js"></script>
+    <script src="js/react-dom.development.js"></script>
+    <script src="js/babel.min.js"></script>
+    <style>
+        .p01{
+            font-size:30px;
+            color:hotpink;
+        }    
+    
+    </style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+    let iNum01 = 11;
+    let sTr = 'Hello world!';
+    function fnReverse(sTr){
+        return sTr.split('').reverse().join('')
+    }
+    let bIsok = false;
+
+    // jsx对象最外层只能有一个标签
+    // 最外层可以加一个括号，方便代码观看
+    let oEl = (
+        <div>
+            {/* jsx语法标签里面的注释的写法 */}
+            <h1>jsx语法</h1> 
+            {/* 插入变量或者计算式 */}
+            <p>{ iNum01+5 }</p>             
+            {/* 插入表达式*/}
+            <p>{ sTr.split('').reverse().join('') }</p>
+            {/* 插入函数调用*/}
+            <p>{ fnReverse(sTr) }</p>
+
+            {/* 插入三元运算表达式*/}
+            <p>{ bIsok?'YES':'NO'  }</p>
+
+            {/* 插入三元运算表达式,条件是计算出来的*/}
+            <p>{ (iNum01==10)?'等于':'不等于'  }</p>
+
+            {/* 单个的标签，标签结尾要加上 "/" */}
+            <img src="images/person05.png" />
+
+            {/* 使用class属性，class需要写成className */}
+            <p className="p01">使用了class样式的p标签</p>
+
+            {/* 使用style属性，通过对象的方式来写样式属性，要写两层大括号
+                第一层大括号表示插入变量
+                第二层大括号指的是对象的大括号            
+            */}
+            <p style={ {'color':'red','fontSize':'30px'} }>使用了style样式的p标签</p>
+        </div>
+    );
+            
+
+    ReactDOM.render(oEl,document.getElementById('root'));
+
+</script>
+</body>
+</html>

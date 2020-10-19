@@ -1,0 +1,14 @@
+.quiz_list{
+    padding:0;
+}
+
+.quiz_list li{
+    background-color: #fff;
+    padding:.6rem .5rem;
+    margin:.5rem 0;
+    border-bottom:0;
+}
+
+.quiz_list .a_count{
+    top:.9rem;
+}

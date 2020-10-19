@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript">
+        // 通过class定义一个类
+        class Person{
+            // 定义构造函数,初始化属性
+            constructor(name,age){
+                this.name = name;
+                this.age = age;
+            }
+
+            // 通过对象的简写方式定义方法：
+            showname(){
+                alert('我的名字是：' + this.name);
+            }
+
+            shownage(){
+                alert('我的年龄是：' + this.age + '岁');
+            }
+        }
+
+
+        //将类实例化一个对象
+        let Andy = new Person('刘德华',60);
+
+        // 调用对象的属性
+        alert( Andy.name );
+
+        // 调用对象的方法：
+        Andy.shownage();
+
+        // 定义一个类继承于Person
+        // 通过extends关键字来实现类的继承
+        class Student extends Person{
+            constructor(name,age,school){
+                // 通过super实现在子类中调用父类的构造函数
+                super(name,age);
+                // 初始化自己的属性
+                this.school = school;
+            }
+
+            // 在子类中写同名方法，可以覆盖掉父类的方法
+            showage(){
+                alert('我的芳龄是：' + this.age + '岁了！');
+            }
+
+
+            // 定义子类自己的方法：
+            showschool(){
+                alert('我的学校是：' + this.school );
+            }
+
+        }
+
+
+        let Tom = new Student('小明',15,'深圳一中');
+
+        // 使用类的方法
+        Tom.showname();
+        Tom.showage();
+        Tom.showschool();
+
+
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

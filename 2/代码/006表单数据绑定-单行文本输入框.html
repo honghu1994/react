@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React Template</title>
+    <script src="js/react.development.js"></script>
+    <script src="js/react-dom.development.js"></script>
+    <script src="js/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+    class Myform extends React.Component{
+        constructor(props){
+            super(props);
+            this.state = {
+                username:'',
+                password:''
+            }
+        }
+        // ev是事件对象，ev.target是发生事件的输入框
+        // ev.target.name 表示发生事件的输入框的name属性值
+        fnChange=(ev)=>{
+            //console.log(ev.target.value);
+            // 使用属性名表达式，ev.target.name的值是可以动态变化的
+            this.setState({
+                [ev.target.name]:ev.target.value
+            })
+        }
+        /*
+        fnChange2=(ev)=>{
+            //console.log(ev.target.value);
+            this.setState({password:ev.target.value})
+        }
+        */
+        render(){
+            return (
+                <form>
+                    <label>用户名：{ this.state.username }</label><br />
+                    <input type="text" name="username" value={ this.state.username } onChange={ this.fnChange } /><br /><br />
+                    <label>密码：{ this.state.password }</label><br />
+                    <input name="password" type="password" value={ this.state.password } onChange={ this.fnChange } />
+                </form>
+            )
+        }
+    }
+
+    ReactDOM.render(<Myform />,document.getElementById('root'));
+
+</script>
+</body>
+</html>

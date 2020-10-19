@@ -1,0 +1,126 @@
+.question_con{
+    background: linear-gradient(-45deg,#00a15b,#8ac14c,#53a624);
+    position: relative;
+    overflow: hidden;
+}
+.question_con h3{
+    font-size:.8rem;
+    padding:.6rem .75rem 0;
+    color:#fff;
+    line-height:1.2rem;
+}
+.question_con .q_info{
+    text-indent:0px;
+    padding:.2rem .75rem .4rem;
+    color:#fff;
+    font-size:12px;
+}
+
+.author_about{
+    position: relative;
+    margin-bottom:.5rem;
+}
+
+.author_about .answer_btn{
+    position: absolute;
+    right:.75rem;
+    bottom:0;
+    width:3rem;
+    height:1.25rem;
+    border:1px solid #fff;
+    color:#fff;
+    font-size:12px;
+    text-align:center;
+    line-height:1.25rem;
+    border-radius:4px;
+}
+
+.answer_form{
+    width:17.25rem;
+    height:0;
+    overflow: hidden;
+    margin:.5rem auto;
+    transition:all 300ms ease;
+}
+
+.answer_form_show{
+    height:5.2rem;
+}
+
+.answer_form textarea{
+    margin:0px;
+    padding:10px;
+    box-sizing:border-box;
+    width:17.25rem;
+    height:3rem;
+    border-radius:4px;
+    border:1px solid #ddd;
+    outline: none;
+}
+
+.answer_form span{
+    display:block;
+    width:3rem;
+    height:1.25rem;
+    background-color: #07ed89;
+    color:#fff;
+    font-size:12px;
+    text-align:center;
+    line-height:1.25rem;
+    border-radius:4px;
+    margin-top:.25rem;
+}
+.answer_con{
+    margin-top:.5rem;
+    margin-bottom:2.5rem;
+    background-color: #fff;
+    overflow: hidden;
+}
+.answer_con h3{
+    font-size:.8rem;
+    padding:.5rem .75rem .25rem;
+    border-bottom:1px solid #ddd;
+}
+.answer_list{
+    display:flex;
+    padding:.7rem 0;
+    overflow: hidden;
+    border-bottom:1px solid #ddd;
+}
+
+.answer_list img{
+    width:2rem;
+    height:2rem;
+    margin:0 .5rem 0 .75rem;
+}
+
+.answer_detail{
+    width:14rem;
+    display:flex;
+    flex-grow:1;
+    flex-direction:column;
+}
+
+.author{
+    line-height:12px;
+    margin-bottom:.375rem;
+}
+
+.author span{
+    font-size:12px;
+    color:#666;
+    padding-right:.5rem;
+    font-weight:bold;    
+}
+.author em{
+    font-style:normal;
+    font-size:12px;
+    color:#999;
+}
+.answer_detail p{
+    font-style:normal;
+    font-size:.7rem;
+    margin-right:.75rem;
+    line-height:1rem;
+    color:#333;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript">
+        let aList01 = [1,2,3];
+
+        // 下面的写法不是复制数组，两个变量对应同一个数组
+        let aList02 = aList01;
+        aList01.push(4);
+        //alert(aList02);
+
+        // 之前的数组复制的方法：
+        /*
+        let aList03 = [];
+
+        for(var i=0;i<aList01.length;i++){
+            aList03.push( aList01[i] );
+        }
+        */
+
+        let aList03 = [...aList01,6];
+
+        aList01.push(5);
+
+        alert(aList01);
+        alert(aList03);
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React Template</title>
+    <script src="js/react.development.js"></script>
+    <script src="js/react-dom.development.js"></script>
+    <script src="js/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+    let aList = ['红海','复联3','碟中谍6','熊出没'];
+
+    // 通过数组的map方法，将数组的数据放到jsx对象中
+    let oEl = (
+        <ul>
+            {
+                // aList.map(function(item,index){
+                //     return <li key={ index }>{ item }</li>;
+                // })
+                aList.map((item,index)=><li key={ index }>{ item }</li>)
+
+            }
+        </ul>
+    );
+
+    ReactDOM.render(oEl,document.getElementById('root'));
+
+</script>
+</body>
+</html>

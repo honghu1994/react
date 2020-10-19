@@ -1,0 +1,62 @@
+body,h3{
+    margin:0px;
+    font-family: 'Microsoft YaHei';
+}
+.main_wrap{
+    width:900px;
+    margin:0px auto;
+}
+.main_wrap img{
+    display:block;
+}
+.menu{
+    width:900px;
+    height:60px;
+    background-color: #d8eeec;
+    border-radius:6px;
+    margin-top:15px;
+    display:flex;
+    align-items: center;
+}
+.menu button{
+    margin-left:20px;
+}
+.mp10{
+    margin-top:10px
+}
+.mb30{
+    margin-bottom:30px;
+}
+.goods_pic{
+    width:100%;
+}
+.goods_name{
+    font-size:13px;
+    color:#000;
+}
+
+.price{
+    margin:15px 0 10px 0;
+    font-size:13px;
+    color:#ff5eaf;
+}
+
+.price em{
+    font-style:normal;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.total_price{
+    line-height:49px;
+    text-align:right;
+    border:1px solid #e3e9ef;
+    font-size:12px;
+}
+
+.total_price em{
+    font-size:22px;
+    font-style:normal;
+    color:#ff7900;
+    padding:0 20px 0 8px;
+}

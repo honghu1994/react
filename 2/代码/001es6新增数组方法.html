@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript">
+        let aList = ['a','b','c'];
+
+        // 通过map方法来遍历数组
+        /*
+        aList.map(function(item,index){
+            alert(index + ' | ' + item);
+        });
+        */
+        aList.map((item,index)=>{
+            // alert(index + ' | ' + item);
+        });
+
+        // 通过includes方法判断数组中是否包含某个成员
+        //alert( aList.includes('c') );
+        //alert( aList.includes('e') );
+
+
+        // 通过一定条件，将一个数组过滤，得到一个新的数组
+        let aList02 = [1,2,3,4,5,6,7,8,9];
+        let aList03 = aList02.filter(function(item){
+            return item % 2 == 0;
+        })
+
+        //alert(aList03);
+
+        // 查找满足条件的第一个成员，将它的值返回
+        /*
+        let iNum = aList02.find(function(item){
+            return item>6
+        })
+        */
+
+        // 将上面的写法简写成下面的形式：
+        let iNum = aList02.find(item=>item>6);
+        // alert(iNum);
+
+        // 查找数组中满足条件的第一个成员，将它的索引值返回
+        const bookArr=[
+            {
+                id:1,
+                bookName:"三国演义"
+            },
+            {
+                id:2,
+                bookName:"水浒传"
+            },
+            {
+                id:3,
+                bookName:"红楼梦"
+            },
+            {
+                id:4,
+                bookName:"西游记"
+            }
+        ];
+
+        let iPos01 = bookArr.findIndex(function(item){
+            return item.bookName == '红楼梦';
+        })
+
+        /*
+        let iPos02 = bookArr.findIndex(function(item){
+            return item.bookName == '三体';
+        })
+        */
+
+        let iPos02 = bookArr.findIndex(item=>item.bookName == '三体');
+        alert(iPos01);
+        alert(iPos02);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

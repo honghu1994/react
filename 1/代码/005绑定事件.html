@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React Template</title>
+    <script src="js/react.development.js"></script>
+    <script src="js/react-dom.development.js"></script>
+    <script src="js/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+    class Helloname extends React.Component{        
+        /*
+        fnHello(){
+            //console.log(this); // undefined
+            alert('Hello '+ this.props.name )
+        }
+        */
+
+        // 上面的方法中的this是undefined，改成下面箭头函数的形式，this就指向组件
+        fnHello=()=>{
+            alert('Hello '+ this.props.name )
+        }
+
+        fnHello2=(sTr)=>{
+            alert('Hello ' + sTr);
+        }        
+
+        render(){
+            return (
+                <div>
+                {/*在标签中直接绑定事件，事件名要写成驼峰式*/}
+                {/*给事件绑定一个类里面定义的方法*/}
+                {/*这里调用的方法，它里面的this是undefined，所以在使用的使用需要bind(this)*/}
+                {/*<input type="button" value="打招呼" onClick = { this.fnHello.bind(this) }  /> */}               
+                <input type="button" value="打招呼" onClick = { this.fnHello }  />
+                {/*绑定的方法需要传参，可以在这个方法外面包一个箭头函数,否则这个方法会立即执行*/}
+                <input type="button" value="打招呼2" onClick = { ()=>{  this.fnHello2('Jack') } }  />
+                </div>
+            )
+        }
+    }
+
+    ReactDOM.render(<Helloname name="Rose" />,document.getElementById('root'));
+
+</script>
+</body>
+</html>

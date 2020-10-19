@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React Template</title>
+    <script src="js/react.development.js"></script>
+    <script src="js/react-dom.development.js"></script>
+    <script src="js/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+    class Myform extends React.Component{
+        constructor(props){
+            super(props);
+            this.state = {
+                aGender:['male','female'],
+                oGendername:{
+                    'male':'男',
+                    'female':'女'
+                },
+                aGendersec:['female']
+            }
+        }
+
+        fnChange=(ev)=>{
+            this.setState({
+                aGendersec:[ ev.target.value ]
+            })
+        }
+
+        render(){
+            // 使用解构赋值来获取state里面的值
+            let { aGender,oGendername,aGendersec } = this.state;
+            return (
+                <form>
+                    <label>性别：</label>
+                    {
+                        aGender.map(item=>( <label key={ item }><input type="radio" checked={ aGendersec.includes( item ) } value={item} onChange={ this.fnChange } />{ oGendername[item] }</label>))
+                    }                   
+                </form>
+            )
+        }
+    }
+
+    ReactDOM.render(<Myform />,document.getElementById('root'));
+
+</script>
+</body>
+</html>

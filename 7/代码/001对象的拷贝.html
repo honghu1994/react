@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript">
+        let aList01 = [1,2,3,4];
+        let aList02 = [...aList01];
+
+        aList01.push(5);
+        // alert(aList02);
+
+        let aList03 = [{name:'tom',age:18},{name:'jack',age:19}]
+        let aList04 = [...aList03];
+
+        aList03[1].age = 20;
+        // console.log(aList04);
+
+
+        oFindObj = aList03.find(item=>item.name=='tom');
+        // console.log(oFindObj);
+        oFindObj.age = 21;
+
+        // console.log(aList04);
+
+        let iNum01 = aList01.find(item=>item>3);
+        alert(iNum01);
+
+        iNum01 = 5;
+
+        console.log(aList01);
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

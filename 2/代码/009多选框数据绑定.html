@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React Template</title>
+    <script src="js/react.development.js"></script>
+    <script src="js/react-dom.development.js"></script>
+    <script src="js/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+    class Myform extends React.Component{
+        constructor(props){
+            super(props);
+            this.state = {
+                oHobbyName:{
+                    'study':'学习',
+                    'game':'游戏',
+                    'shopping':'购物',
+                    'movie':'电影',
+                    'travel':'旅行',
+                },
+                aHobby:['study','game','shopping','movie','travel'],
+                aHobbysec:['study','shopping']
+            }
+        }
+
+        fnChange=(ev)=>{
+            //console.log(ev.target.value);
+            // 得到多选框
+            let oInput = ev.target;
+            // 得到多选框的值
+            let sVal = ev.target.value;
+
+            this.setState(state=>{
+                // 判断aHobbysec数组中是否包含点击的多选框的值
+                if( state.aHobbysec.includes( sVal ) ){
+                    // 如果包含，就将这个值从数组中过滤出去，得到一个新的数组
+                    let aNewArr = state.aHobbysec.filter( function(item){ return item!= sVal } )                    
+                    return { aHobbysec: aNewArr }
+                }else{
+                    // 如果不包含，就将这个值放到这个数组中
+                    let aNewArr = [...state.aHobbysec,sVal];
+                    return { aHobbysec: aNewArr }
+                }
+            })
+        }
+
+
+        render(){
+            let { oHobbyName, aHobby,aHobbysec} = this.state;
+            return (
+                <form>
+                    <label>爱好：{ aHobbysec }</label><br />
+                    {
+                        aHobby.map((item,i)=>{
+                            return <label key={ item }><input type="checkbox" checked={ aHobbysec.includes(item) } value={ item } onChange={ this.fnChange } /> { oHobbyName[item] }</label>
+                        })
+                    }                    
+
+                </form>
+            )
+        }
+    }
+
+    ReactDOM.render(<Myform />,document.getElementById('root'));
+
+</script>
+</body>
+</html>

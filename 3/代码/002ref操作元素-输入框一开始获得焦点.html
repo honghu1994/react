@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React Template</title>
+    <script src="js/react.development.js"></script>
+    <script src="js/react-dom.development.js"></script>
+    <script src="js/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+    class Myform extends React.Component{
+        constructor(props){
+            super(props);
+            this.state = {};
+            // 1、使用ref第一步：在构造函数中创建一个ref
+            this.oMyref = React.createRef();
+        }
+
+        componentDidMount(){
+            //console.log( this.oMyref.current )
+            // 3、使用ref第三步：在方法中通过 ref对象.current 来操作这个标签
+            this.oMyref.current.focus();
+        }
+
+        render(){
+            return (
+                // 2、使用ref第二步：在便签中关联ref对象
+                <input type="text" ref={ this.oMyref } />
+            )
+        }
+    }
+
+    ReactDOM.render(<Myform />,document.getElementById('root'));
+</script>
+</body>
+</html>

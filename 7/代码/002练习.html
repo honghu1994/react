@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let a=[1,2,3,4]
+    let b=[...a]
+    a.push(5);
+    // console.log('a:'+a);
+    // console.log('b:'+b);
+
+    let c01 =[{name:'tom',age:18},{name:'jack',age:19}];
+    let d02 =[...c01]
+    c01[1].age=20;
+
+   e05=c01.find(item=>item.name='tom')
+   e05.age=21;
+   console.log(c01);
+   
+    
+    </script>
+</body>
+</html>

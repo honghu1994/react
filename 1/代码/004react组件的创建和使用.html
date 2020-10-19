@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React Template</title>
+    <script src="js/react.development.js"></script>
+    <script src="js/react-dom.development.js"></script>
+    <script src="js/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+    // 通过函数的方式定义一个组件
+    // 组件的首字母要大写
+    // 如果需要传参，就要加一个props参数，这个参数是一个对象
+    // 组件需要返回一个jsx对象
+    // function Welcome(props){
+    //     return <h1>Hello,{ props.name }</h1>
+    // }
+
+
+    // 通过类的方式定义组件,需要继承于  React.Component 类
+    // 类里面最少需要有一个render方法，来返回一个jsx对象
+    class Welcome extends React.Component{
+        render(){
+            return  <h1>Hello,{ this.props.name }</h1>
+        }
+    }
+
+
+    // 定义一个父组件，里面使用子组件
+    function App(){
+        return (
+            <div>
+                <Welcome name="Sara" />
+                <Welcome name="Jack" />
+                <Welcome name="Tom" />            
+            </div>
+        )
+    }    
+
+    // 将组件渲染出来
+    // 组件传值，如果是字符串，可以直接写成 name="Sara",如果是变量，可以写成大括号的形式
+    // ReactDOM.render(<Welcome name="Sara" />,document.getElementById('root'));
+    ReactDOM.render(<App />,document.getElementById('root'));
+
+    
+
+</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React Template</title>
+    <script src="js/react.development.js"></script>
+    <script src="js/react-dom.development.js"></script>
+    <script src="js/babel.min.js"></script>
+    <script type="text/javascript" src="js/axios.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+    class Fileform extends React.Component{
+        constructor(props){
+            super(props);
+            this.state = {
+                sPicname:''
+            };
+            this.oMyfile = React.createRef();
+        }
+        fnUpload=()=>{
+            // 拿到要上传的文件数据
+            let oFile = this.oMyfile.current.files[0];
+            //console.log(oFile);
+            // 创建一个表单数据对象，来帮我提交文件数据
+            let oFd = new FormData();
+            //console.log(oFd);
+            // 将文件数据放入到表单数据对象中
+            oFd.append('pic',oFile);
+
+            // 通过axios提交
+            axios.post('http://localhost:3000/upload',oFd,{
+                headers:{// 提交文件数据，需要在headers中设置类型
+                    'Content-Type':'multipart/form-data'
+                },
+                responseType:'text'
+            }).then(dat=>{
+                //console.log(dat.data);
+                this.setState({
+                    sPicname:dat.data
+                })
+            })
+        }        
+        render(){
+            return (
+                <form>
+                    <input type="file" ref={ this.oMyfile } />
+                    <input type="button" value="提交" onClick={ this.fnUpload } /><br />
+                    {
+                        this.state.sPicname && <img src={ 'http://localhost:3000/' + this.state.sPicname } />
+                    }
+                </form>
+            )
+        }
+    }
+
+    ReactDOM.render(<Fileform />,document.getElementById('root'));
+
+</script>
+</body>
+</html>
